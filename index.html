@@ -4,9 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Variables.css">
+    
     <title>Table</title>
 </head>
 <body>
+
+    <div class="container">
+        <h1>Responsive Table</h1>
+        <button class="chane-theme">light</button>
+        
+        <input type="text" id="searchInput" placeholder="Search..." />
+    
+        
+          <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Company</th>
+                    <th>Contact</th>
+                    <th>Country</th>
+                    <th>number</th>
+                    <th>eamil</th>
+                    <th>action</th>
+                  </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <td>1</td>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>9915552360</td>
+                <td>something@gmail.com</td>
+                <td>remove</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>9915552360</td>
+                <td>something@gmail.com</td>
+                <td>remove</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+                <td>9915552360</td>
+                <td>something@gmail.com</td>
+                <td>remove</td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+    
+        <div class="pagination" id="pagination"></div>
+      </div>
+    
     
 
 
