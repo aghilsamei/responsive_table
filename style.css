@@ -75,14 +75,55 @@ table {
   td {
     color: var(--text-color);
   }
+
+
+  /* btn change */
   
-  .chane-theme{
-    width: 100px;
-    padding: 0.2rem 1rem;
-    border-radius: 5px;
+  .change-theme {
+    width: 120px;
+    padding: 0.4rem 1.2rem;
+    font-size: 16px;
+    font-weight: 500;
     border: none;
-    outline: none;
-    font-size: 24px;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: #5b636b;
+    background-color: var(--table-header-bg);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 1rem 0;
   }
+  
+  .change-theme:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .change-theme:active {
+    transform: scale(0.97);
+  }
+
+  /* btn change */
+
+  /* remove btn */
+
+  .remove-btn {
+    padding: 0.3rem 0.8rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .remove-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+  }
+  
+  .remove-btn:active {
+    transform: scale(0.95);
+  }
+  
