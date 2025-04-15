@@ -24,9 +24,10 @@ A modern, fully responsive data table with features that adapt to various screen
 ## 🔧 Customization:
 You can easily modify the columns and data to fit your needs. Adjust the table appearance using CSS or extend the functionality with JavaScript.
 
+## 💬 Support:
+If you have any questions or need help, feel free to open an issue or contact me directly! 🙌
+
 ## 📥 Download Project:
 ```bash
 git clone https://github.com/aghilsamei/responsive_table.git
 
-## 💬 Support:
-If you have any questions or need help, feel free to open an issue or contact me directly! 🙌
