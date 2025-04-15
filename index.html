@@ -17,33 +17,46 @@
         
         <input type="text" id="searchInput" placeholder="Search..." />
     
+        <div class="table-container">
+          <div class="table-wrapper">
+            <table id="dataTable">
+              <thead>
+                  <tr>
+                      <th>#</th>
+                      <th>Company</th>
+                      <th class="slide-col">Contact</th>
+                      <th class="slide-col">Country</th>
+                      <th class="slide-col">Country</th>
+                      <th class="slide-col">number</th>
+                      <th class="slide-col">number</th>
+                      <th class="slide-col">number</th>
+                      <th class="slide-col">eamil</th>
+                      <th class="slide-col">eamil</th>
+                      <th class="slide-col">action</th>
+                    </tr>
+              </thead>
+              <tbody id="tableBody">
+                <!-- <tr>
+                  <td>1</td>
+                  <td>Alfreds Futterkiste</td>
+                  <td>Maria Anders</td>
+                  <td>Germany</td>
+                  <td>9915552360</td>
+                  <td>something@gmail.com</td>
+                  <td>remove</td>
+                </tr> -->
+              
+               
+              </tbody>
+            </table>
+
+          </div>
+          <button id="prevBtn" class="prev-btn">Prev</button>
+          <div id="columnStatus" class="status-bar"></div>
+          <button id="nextBtn" class="next-btn">Next</button>
+        </div>
         
-          <table id="dataTable">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Company</th>
-                    <th>Contact</th>
-                    <th>Country</th>
-                    <th>number</th>
-                    <th>eamil</th>
-                    <th>action</th>
-                  </tr>
-            </thead>
-            <tbody id="tableBody">
-              <tr>
-                <td>1</td>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>9915552360</td>
-                <td>something@gmail.com</td>
-                <td>remove</td>
-              </tr>
-            
-             
-            </tbody>
-          </table>
+         
         </div>
       </div>
         <div class="pagination" id="pagination"></div>

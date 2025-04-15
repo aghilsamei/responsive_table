@@ -17,13 +17,24 @@ body{
 .container{
     width: 90%;
     height: 90%;
- 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
     border-radius: 10px;
     
+}
+.table-container {
+  position: relative;
+  width: 100%; /* عرض مناسب برای موبایل */
+  margin-top: 2rem;
+
+}
+
+
+.table-wrapper {
+  display: flex;
+  transition: transform 0.3s ease;
 }
 
 table {
@@ -32,8 +43,9 @@ table {
     border-radius: 8px;
     overflow: hidden;
     border:1px solid black;
-    margin-top:2rem;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.34) ;
+    /* table-layout: fixed; */
+    margin-bottom: 2.5rem;
   }
   tr{
 
@@ -75,7 +87,57 @@ table {
   td {
     color: var(--text-color);
   }
+  .cell-number{
+    width: 70px;
+  }
 
+  /* slide col */
+  .slide-col {
+    display: none;
+  }
+  .slide-col.active {
+    display: table-cell;
+  }
+  
+
+  /* next and prev btn */
+  .prev-btn, .next-btn {
+    position: absolute;
+    
+    /* transform: translateY(-50%); */
+    padding: 0.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50%;
+    z-index: 10;
+    bottom: 0;
+    
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+
+  
+.prev-btn:hover, .next-btn:hover {
+  background-color: #2980b9;
+}
+  
+  /* next and prev btn */
+
+  .status-bar {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #888;
+  }
 
   /* btn change */
   
@@ -106,7 +168,7 @@ table {
   /* btn change */
 
   /* remove btn */
-
+  
   .remove-btn {
     padding: 0.3rem 0.8rem;
     background-color: #e74c3c;
@@ -126,4 +188,37 @@ table {
   .remove-btn:active {
     transform: scale(0.95);
   }
+    /* remove btn */
+
+
+
+    
+/* برای صفحه‌های کوچک (موبایل) */
+@media (max-width: 600px) {
+  th, td {
+    font-size: 0.9rem; /* کمی کوچکتر برای موبایل */
+  }
+}
+
+/* برای تبلت‌ها */
+@media (min-width: 601px) and (max-width: 1024px) {
+  th, td {
+    font-size: 1rem; /* فونت استاندارد برای تبلت */
+  }
+}
+
+/* برای لپ‌تاپ‌ها */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  th, td {
+    font-size: 1.1rem; /* فونت بزرگتر برای لپ‌تاپ‌ها */
+  }
+}
+
+/* برای دسکتاپ‌ها */
+@media (min-width: 1441px) {
+  th, td {
+    font-size: 1.2rem; /* فونت بزرگتر برای دسکتاپ */
+  }
+}
+
   
