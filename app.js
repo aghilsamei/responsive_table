@@ -5,51 +5,59 @@ const tableData = [
       company: "Alfreds Futterkiste",
       contact: "Maria Anders",
       country: "Germany",
-      number: "9915552360",
-      number: "9915552360",
-      number: "9915552360",
-      email: "maria@gmail.com"
+      country2: "Germany",
+      number1: "9915552360",
+      number2: "9915552360",
+      number3: "9915552360",
+      email: "maria@gmail.com",
+      email2: "maria@gmail.com"
     },
     {
       id: 2,
       company: "Centro comercial Moctezuma",
       contact: "Francisco Chang",
       country: "Mexico",
-      number: "9123456789",
-      number: "9123456789",
-      number: "9123456789",
-      email: "francisco@gmail.com"
+      country2: "Mexico",
+      number1: "9123456789",
+      number2: "9123456789",
+      number3: "9123456789",
+      email: "francisco@gmail.com",
+      email2: "francisco@gmail.com"
     },
     {
       id: 3,
       company: "Ernst Handel",
       contact: "Roland Mendel",
       country: "Austria",
-      number: "9356482374",
-      number: "9356482374",
-      number: "9356482374",
-      email: "roland@handel.at"
+      country2: "Austria",
+      number1: "9356482374",
+      number2: "9356482374",
+      number3: "9356482374",
+      email: "roland@handel.at",
+      email2: "roland@handel.at"
     },
     {
       id: 4,
       company: "Island Trading",
       contact: "Helen Bennett",
       country: "UK",
-      number: "9876543210",
-      number: "9876543210",
-      number: "9876543210",
-      email: "helen@island.co.uk"
+      country2: "UK",
+      number1: "9876543210",
+      number2: "9876543210",
+      number3: "9876543210",
+      email: "helen@island.co.uk",
+      email2: "helen@island.co.uk"
     },
-    {
-      id: 5,
-      company: "Laughing Bacchus Winecellars",
-      contact: "Yoshi Tannamuri",
-      country: "Canada",
-      number: "9988776655",
-      number: "9988776655",
-      number: "9988776655",
-      email: "yoshi@winecellars.ca"
-    }
+    // {
+    //   id: 5,
+    //   company: "Laughing Bacchus Winecellars",
+    //   contact: "Yoshi Tannamuri",
+    //   country: "Canada",
+    //   number: "9988776655",
+    //   number: "9988776655",
+    //   number: "9988776655",
+    //   email: "yoshi@winecellars.ca"
+    // }
   ];
 
 //   render table
@@ -65,12 +73,12 @@ const tableData = [
         <td>${item.company}</td>
         <td class="slide-col">${item.contact}</td>
         <td class="slide-col">${item.country}</td>
-        <td class="slide-col">${item.country}</td>
-        <td class="slide-col">${item.number}</td>
-        <td class="slide-col">${item.number}</td>
-        <td class="slide-col">${item.number}</td>
+        <td class="slide-col">${item.country2}</td>
+        <td class="slide-col">${item.number1}</td>
+        <td class="slide-col">${item.number2}</td>
+        <td class="slide-col">${item.number3}</td>
         <td class="slide-col">${item.email}</td>
-        <td class="slide-col">${item.email}</td>
+        <td class="slide-col">${item.email2}</td>
         <td class="slide-col"><button class="remove-btn">Remove</button></td>
       `;
   
@@ -169,3 +177,41 @@ themeButton.addEventListener("click", () => {
     html.setAttribute("data-theme", newTheme);
     themeButton.textContent = newTheme === "dark" ? "Light ☀️" : "Dark 🌙";
   });
+
+
+  // exportBtn
+
+  document.getElementById("exportBtn").addEventListener("click", () => {
+    const headers = ["#", "Company", "Contact", "Country", "Country2", "Number1", "Number2", "Number3", "Email", "Email2", "Action"];
+    let csvContent = headers.join(",") + "\r\n";
+
+    tableData.forEach((item, index) => {
+      const row = [
+        index + 1,
+        item.company,
+        item.contact,
+        item.country,
+        item.country2,
+        item.number1,
+        item.number2,
+        item.number3,
+        item.email,
+        item.email2,
+        "Remove"
+      ];
+
+      csvContent += row.map(field => `"${field}"`).join(",") + "\r\n";
+    });
+
+    // تبدیل داده‌ها به Blob
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
+
+    // ایجاد لینک برای دانلود فایل
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.setAttribute("download", "table_data.csv");
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});

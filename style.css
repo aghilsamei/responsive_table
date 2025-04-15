@@ -194,6 +194,29 @@ table {
     /* remove btn */
 
 
+    /* export-btn */
+    
+    .export-btn {
+      padding: 0.5rem 1rem;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .export-btn:hover {
+      background-color: #1e8449;
+      transform: scale(1.05);
+    }
+    .export-btn:active {
+      transform: scale(0.95);
+    }
+    
+    /* export-btn */
+    
 
     @keyframes fadeSlideIn {
       from {
