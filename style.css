@@ -94,6 +94,9 @@ table {
   /* slide col */
   .slide-col {
     display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
   .slide-col.active {
     display: table-cell;
@@ -192,6 +195,29 @@ table {
 
 
 
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateX(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+    }
+    
+    @keyframes fadeSlideOut {
+      from {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+      }
+      to {
+        opacity: 0;
+        transform: translateX(-40px) scale(0.95);
+      }
+    }
+    
+    
     
 /* برای صفحه‌های کوچک (موبایل) */
 @media (max-width: 600px) {

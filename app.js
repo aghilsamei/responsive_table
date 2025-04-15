@@ -119,9 +119,17 @@ function updateVisibleColumns() {
   rows.forEach(row => {
     const slideCols = Array.from(row.querySelectorAll(".slide-col"));
 
+    
     slideCols.forEach((col, i) => {
       if (i >= startIndex && i < startIndex + columnsPerPage) {
         col.classList.add("active");
+        col.style.animation = "fadeSlideIn 0.4s ease-out forwards";
+      } else {
+        col.style.animation = "fadeSlideOut 0.3s ease-in forwards";
+        setTimeout(() => {
+          col.classList.remove("active");
+          col.style.animation = "";
+        }, 300);
       }
     });
   });
