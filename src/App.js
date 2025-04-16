@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ResponsiveTable from "./components/ResponsiveTable";
+
+const testData = [
+  {
+    name: "Alice",
+    age: 25,
+    city: "New York",
+    email: "alice@example.com",
+    job: "Developer",
+    status: "Active",
+    phone: "123456789",
+    address: "34 street",
+    salary: "$5000",
+  },
+  {
+    name: "Bob",
+    age: 30,
+    city: "London",
+    email: "bob@example.combob@example.com",
+    job: "Designer",
+    status: "Inactive",
+    phone: "987654321",
+    address: "56 street",
+    salary: "$4500",
+  },
+];
+
+const tableHeaders = [
+  "#",
+  "Name",
+  "Age",
+  "City",
+  "Email",
+  "Job",
+  "Status",
+  "Phone",
+  "Address",
+  "Salary",
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <>
+    
+    <ResponsiveTable data={testData} showActions={false} headers={tableHeaders}   stickyKeys={["Name" , "Age"]} exportAllData={true} />
+    
+    </>
   );
 }
 
