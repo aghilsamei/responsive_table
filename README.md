@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Responsive Table with Dynamic Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a responsive table component built with React. It supports dynamic column sliding, theme toggling (light/dark mode), and allows the export of data to a CSV file. It is highly customizable and designed to be responsive, adjusting the number of columns displayed based on the screen size.
 
-## Available Scripts
+## Features ✨
+- **Responsive Design**:  The table is responsive and adapts to different screen sizes. As the screen size decreases, columns are hidden, and a sliding feature is activated for smaller screens.
 
-In the project directory, you can run:
+- **Sticky Columns**:  Columns you want to remain visible while scrolling can be made sticky by passing them through the stickyKeys prop.
+- **CSV Export 📁**: Export visible table data to a CSV file.
 
-### `npm start`
+- **Action Column**: An action column can be shown with options like "Edit" or "Delete". To display this, set 'showActionColumn={true}'.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Theme Toggle 🌙☀️**: Switch between light and dark themes using the built-in theme toggle button.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Usage 🚀
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To get started with the **Responsive Table**, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Import the `ResponsiveTable` Component
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can use the `ResponsiveTable` component by importing it into your React app. Here’s a basic example of how to use it:
 
-### `npm run eject`
+```jsx
+import React from "react";
+import ResponsiveTable from "./components/ResponsiveTable";
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+// Sample Data
+const data = [
+  {
+    name: "Alice",
+    age: 25,
+    city: "New York",
+    email: "alice@example.com",
+    job: "Developer",
+    status: "Active",
+    phone: "123456789",
+    address: "34 street",
+    salary: "$5000",
+  },
+  {
+    name: "Bob",
+    age: 30,
+    city: "London",
+    email: "bob@example.com",
+    job: "Designer",
+    status: "Inactive",
+    phone: "987654321",
+    address: "56 street",
+    salary: "$4500",
+  },
+];
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+// Table Headers
+const headers = ["#", "Name", "Age", "City", "Email", "Job", "Status", "Phone", "Address", "Salary"];
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+function App() {
+  return (
+    <ResponsiveTable
+      data={data}                   // Your data
+      headers={headers}             // Your table headers
+      stickyKeys={["Name", "Age"]}  // Columns that should always be visible (sticky)
+      showActionColumn={true}       // Optionally show action column (Edit/Delete)
+    />
+  );
+}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+export default App;
 
-## Learn More
+## Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. Clone the repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/aghilsamei/responsive_table.git
