@@ -12,8 +12,26 @@ This is a responsive table component built with React. It supports dynamic colum
 
 - **Theme Toggle 🌙☀️**: Switch between light and dark themes using the built-in theme toggle button.
 
+## 📸 Screenshots
 
-
+<table>
+  <tr>
+    <td>
+      <img src="./public/1.png" width="100%" alt="Light Mode" />
+    </td>
+    <td>
+      <img src="./public/2.png" width="100%" alt="Sliding Columns" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="./public/3.png" width="100%" alt="Dark Mode" />
+    </td>
+    <td>
+      <img src="./public/4.png" width="100%" alt="Dark Sliding" />
+    </td>
+  </tr>
+</table>
 
 # Usage 🚀
 
